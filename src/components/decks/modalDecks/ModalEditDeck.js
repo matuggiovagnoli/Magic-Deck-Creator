@@ -20,11 +20,11 @@ const ModalEditDeck = ({ isOpen, closeModal, deck }) => {
         }
     };
     return (React.createElement(React.Fragment, null, isOpen && (React.createElement(Modal, { title: "Editar Mazo", onClose: () => closeModal('EditDeck') },
-        React.createElement("form", { className: 'flex flex-col justify-center items-center gap-4 ', onSubmit: handleSubmit },
+        React.createElement("form", { className: 'flex flex-col justify-center items-center gap-4 ', onSubmit: handleSubmit, "data-testid": "edit-deck-form" },
             React.createElement("div", null,
                 React.createElement("label", null, "Nuevo Titulo: "),
-                React.createElement("input", { value: newTitle, onChange: (e) => setNewTitle(e.target.value), className: 'focus:outline-none border-b' })),
+                React.createElement("input", { "data-testid": "new-title-input", value: newTitle, onChange: (e) => setNewTitle(e.target.value), className: 'focus:outline-none border-b' })),
             error && React.createElement("p", { className: 'text-red-600' }, "El nuevo titulo no puedo estar vacio y debe contener al menos 4 caracteres y menos de 15"),
-            React.createElement(Button, { content: "Confirmar", type: "Submit", className: "border border-green-500 bg-green-500 font-semibold" }))))));
+            React.createElement(Button, { content: "Confirmar", type: "submit", className: "border border-green-500 bg-green-500 font-semibold" }))))));
 };
 export default ModalEditDeck;

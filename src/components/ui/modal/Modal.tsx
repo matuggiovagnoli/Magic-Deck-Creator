@@ -8,7 +8,7 @@ const Modal: React.FC<ModalProps> = ({ title, onClose, children }) => {
         {/* Header */}
         <div className="modal-header flex justify-between border-b-2 pb-2 items-center">
           <h2 className="text-xl font-semibold">{title}</h2>
-          <button onClick={onClose} className="text-gray-600 text-2xl hover:cursor-pointer">
+          <button onClick={onClose} data-testid="close-button" className="text-gray-600 text-2xl hover:cursor-pointer">
             ❌
           </button>
         </div>

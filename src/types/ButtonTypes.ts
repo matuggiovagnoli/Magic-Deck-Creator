@@ -2,7 +2,7 @@ export interface ButtonProps {
 	content: String | React.ReactNode;
 	className?: string;
 	onClick?: () => void;
-	type?:string;
+	type?: "button" | "submit" | "reset";
 }
 
 export interface ButtonLinkProps {

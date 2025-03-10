@@ -27,10 +27,11 @@ const ModalEditDeck: React.FC<ModalPropsEditDeck> = ({ isOpen, closeModal, deck 
         {
             isOpen && (
                 <Modal title="Editar Mazo" onClose={() => closeModal('EditDeck')}>
-                    <form className='flex flex-col justify-center items-center gap-4 ' onSubmit={handleSubmit}>
+                    <form className='flex flex-col justify-center items-center gap-4 ' onSubmit={handleSubmit} data-testid="edit-deck-form">
                         <div>
                             <label>Nuevo Titulo: </label>
                             <input 
+                                data-testid="new-title-input"
                                 value={newTitle}
                                 onChange={(e) => setNewTitle(e.target.value)}
                                 className='focus:outline-none border-b'
@@ -39,7 +40,7 @@ const ModalEditDeck: React.FC<ModalPropsEditDeck> = ({ isOpen, closeModal, deck 
                         {error && <p  className='text-red-600'>El nuevo titulo no puedo estar vacio y debe contener al menos 4 caracteres y menos de 15</p>}
                         <Button 
                             content="Confirmar"
-                            type="Submit"
+                            type="submit"
                             className="border border-green-500 bg-green-500 font-semibold"
                         />
                     </form>
