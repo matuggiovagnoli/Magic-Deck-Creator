@@ -21,9 +21,9 @@ function App() {
         <Header />
         <main className='flex-grow mt-[60px] mb-[50px]'>
           <Routes>
-            <Route path='/' element={<Home />}/>
-            <Route path='/MagicCards' element={<CardList/>}/>
-            <Route path='/Decks' element={<MyDecks/>}/>
+            <Route path='Magic-Deck-Creator/' element={<Home />}/>
+            <Route path='Magic-Deck-Creator/MagicCards' element={<CardList/>}/>
+            <Route path='Magic-Deck-Creator/Decks' element={<MyDecks/>}/>
           </Routes>
         </main>
         <Footer />

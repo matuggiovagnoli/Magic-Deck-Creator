@@ -3,9 +3,9 @@ import { Link, useLocation } from 'react-router';
 const Header = () => {
     const location = useLocation();
     const links = [
-        { to: '/', label: 'Inicio' },
-        { to: '/Decks', label: 'Mazos' },
-        { to: '/MagicCards', label: 'Cartas' },
+        { to: 'Magic-Deck-Creator/', label: 'Inicio' },
+        { to: 'Magic-Deck-Creator/Decks', label: 'Mazos' },
+        { to: 'Magic-Deck-Creator/MagicCards', label: 'Cartas' },
     ];
     const isActive = (path) => location.pathname === path;
     return (React.createElement("header", { className: "w-full p-4 bg-gradient-to-b from-black/60 to-transparent text-white z-50" },

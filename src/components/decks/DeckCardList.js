@@ -17,7 +17,7 @@ const DeckCardList = ({ deck, handleRemoveCard, handleRemoveDeck }) => {
             React.createElement("p", { className: 'text-xl font-semibold' }, "No hay cartas en este deck."))) : (React.createElement("div", { className: "flex flex-wrap gap-8 justify-start" }, deck.cards.map((card) => (React.createElement("div", { key: card.id, className: "flex flex-col hover:outline-2 hover:outline-offset-4 outline-blue-400 rounded-lg items-center w-56" },
             React.createElement("img", { src: card.imageUrl, alt: `Carta con id: ${card.id}`, className: "w-56 object-contain mb-2" }),
             React.createElement(Button, { onClick: () => handleRemoveCard(deck.id, card.id), className: "w-full border border-red-600 text-red-600 hover:bg-red-600 hover:text-white mt-2", content: "Eliminar carta" }))))))),
-        React.createElement(ButtonLink, { path: '/MagicCards', content: "Cartas Disponibles", className: "w-fit self-center bg-black text-xl text-white animate-pulse mt-10" }),
+        React.createElement(ButtonLink, { path: 'Magic-Deck-Creator/MagicCards', content: "Cartas Disponibles", className: "w-fit self-center bg-black text-xl text-white animate-pulse mt-10" }),
         React.createElement(ModalEditDeck, { isOpen: isOpen('EditDeck'), closeModal: closeModal, deck: deck }),
         React.createElement(ModalDeleteDeck, { isOpen: isOpen('DeleteDeck'), closeModal: closeModal, handleRemoveDeck: handleRemoveDeck, id: deck.id })));
 };

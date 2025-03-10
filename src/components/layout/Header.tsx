@@ -5,9 +5,9 @@ const Header = () => {
   const location = useLocation()
 
   const links = [
-    { to: '/', label: 'Inicio' },
-    { to: '/Decks', label: 'Mazos' },
-    { to: '/MagicCards', label: 'Cartas' },
+    { to: 'Magic-Deck-Creator/', label: 'Inicio' },
+    { to: 'Magic-Deck-Creator/Decks', label: 'Mazos' },
+    { to: 'Magic-Deck-Creator/MagicCards', label: 'Cartas' },
   ]
 
   const isActive = (path: string) => location.pathname === path

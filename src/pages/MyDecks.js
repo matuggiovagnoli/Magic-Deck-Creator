@@ -19,14 +19,13 @@ const MyDecks = () => {
     };
     const handleRemoveDeck = (deckId) => {
         removeDeck(deckId);
-        // Si el mazo eliminado es el que está seleccionado, seleccionamos el siguiente mazo disponible
         if (deckId === selectedDeck) {
             const remainingDecks = decks.filter(deck => deck.id !== deckId);
             if (remainingDecks.length > 0) {
-                setSelectedDeck(remainingDecks[0].id); // Seleccionar el primer mazo disponible
+                setSelectedDeck(remainingDecks[0].id);
             }
             else {
-                setSelectedDeck(""); // Si no quedan mazos, dejamos seleccionado un valor vacío
+                setSelectedDeck("");
             }
         }
     };

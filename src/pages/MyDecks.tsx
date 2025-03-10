@@ -24,13 +24,12 @@ const MyDecks = () => {
   const handleRemoveDeck = (deckId: string) => {
     removeDeck(deckId);
     
-    // Si el mazo eliminado es el que está seleccionado, seleccionamos el siguiente mazo disponible
     if (deckId === selectedDeck) {
       const remainingDecks = decks.filter(deck => deck.id !== deckId);
       if (remainingDecks.length > 0) {
-        setSelectedDeck(remainingDecks[0].id);  // Seleccionar el primer mazo disponible
+        setSelectedDeck(remainingDecks[0].id);
       } else {
-        setSelectedDeck("");  // Si no quedan mazos, dejamos seleccionado un valor vacío
+        setSelectedDeck(""); 
       }
     }
   };
@@ -67,7 +66,7 @@ const MyDecks = () => {
           {selectedDeck && 
             (decks.find(deck => selectedDeck === deck.id) ? (
               <DeckCardList 
-                deck={decks.find(deck => selectedDeck === deck.id)!}  // Usamos el operador de afirmación no nula (!)
+                deck={decks.find(deck => selectedDeck === deck.id)!}
                 handleRemoveCard={handleRemoveCard}
                 handleRemoveDeck={handleRemoveDeck}
               />

@@ -10,6 +10,6 @@ const Home = () => {
             React.createElement("p", { className: "mt-2" }, "Explora una vasta colecci\u00F3n de cartas, selecciona tus favoritas y crea mazos \u00FAnicos adaptados a tu estilo de juego."),
             React.createElement("p", { className: "mt-2 font-semibold" }, "Recuerda, la clave del \u00E9xito no es solo la suerte, sino una estrategia bien pensada. \u00A1Comienza a construir tu mazo y prep\u00E1rate para la batalla!")),
         React.createElement("nav", { className: "mt-6" },
-            React.createElement(ButtonLink, { path: "/Decks", className: "bg-black text-xl text-white animate-pulse", content: "Comienza la Aventura" }))));
+            React.createElement(ButtonLink, { path: "Magic-Deck-Creator/Decks", className: "bg-black text-xl text-white animate-pulse", content: "Comienza la Aventura" }))));
 };
 export default Home;
