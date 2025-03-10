@@ -52,7 +52,7 @@ const DeckCardList: React.FC<DeckCardListProps> = ({ deck, handleRemoveCard, han
       )}
     </div>
     <ButtonLink 
-            path='Magic-Deck-Creator/MagicCards'
+            path='/MagicCards'
             content="Cartas Disponibles"
             className="w-fit self-center bg-black text-xl text-white animate-pulse mt-10"
     />

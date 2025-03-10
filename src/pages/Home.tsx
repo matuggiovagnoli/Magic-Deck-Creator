@@ -18,7 +18,7 @@ const Home = () => {
 
       <nav className="mt-6">
         <ButtonLink 
-          path="Magic-Deck-Creator/Decks" 
+          path="/Decks" 
           className="bg-black text-xl text-white animate-pulse"
           content="Comienza la Aventura"
         />
