@@ -2,11 +2,12 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import CardList from '../../pages/CardList';
 import useMagicCards from '../../hooks/useMagicCards';
+import { vi } from 'vitest';
 
 // Mockear el hook useMagicCards
-jest.mock('../../hooks/useMagicCards', () => ({
+vi.mock('../../hooks/useMagicCards', () => ({
   __esModule: true,
-  default: jest.fn(),
+  default: vi.fn(),
 }));
 
 describe('CardList', () => {
@@ -14,9 +15,9 @@ describe('CardList', () => {
     // Mockeamos el valor de retorno de useMagicCards
     (useMagicCards as jest.Mock).mockReturnValue({
       cardList: [{ id: '1', name: 'Card 1' }, { id: '2', name: 'Card 2' }],
-      getCards: jest.fn(),
+      getCards: vi.fn(),
       loading: false,
-      setPageSize: jest.fn(),
+      setPageSize: vi.fn(),
       pageSize: 10,
       error: null,
     });
@@ -32,9 +33,9 @@ describe('CardList', () => {
     // Mock de useMagicCards cuando hay un error
     (useMagicCards as jest.Mock).mockReturnValue({
       cardList: [],
-      getCards: jest.fn(),
+      getCards: vi.fn(),
       loading: false,
-      setPageSize: jest.fn(),
+      setPageSize: vi.fn(),
       pageSize: 10,
       error: 'Error loading cards',
     });
