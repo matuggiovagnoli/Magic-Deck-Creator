@@ -8,13 +8,14 @@ const ModalEditDeck = ({ isOpen, closeModal, deck }) => {
     const [error, setErrors] = useState(false);
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (newTitle.trim() === "" || newTitle.length <= 3) {
+        if (newTitle.trim().length <= 3 || newTitle.trim().length >= 15) {
             setErrors(true);
             setNewTitle("");
         }
         else {
+            const title = newTitle.trim();
             setErrors(false);
-            updateDeckName(deck.id, newTitle);
+            updateDeckName(deck.id, title);
             closeModal("EditDeck");
         }
     };
@@ -23,7 +24,7 @@ const ModalEditDeck = ({ isOpen, closeModal, deck }) => {
             React.createElement("div", null,
                 React.createElement("label", null, "Nuevo Titulo: "),
                 React.createElement("input", { value: newTitle, onChange: (e) => setNewTitle(e.target.value), className: 'focus:outline-none border-b' })),
-            error && React.createElement("p", { className: 'text-red-600' }, "El nuevo titulo no puedo estar vacio y debe contener al menos 3 caracteres"),
+            error && React.createElement("p", { className: 'text-red-600' }, "El nuevo titulo no puedo estar vacio y debe contener al menos 4 caracteres y menos de 15"),
             React.createElement(Button, { content: "Confirmar", type: "Submit", className: "border border-green-500 bg-green-500 font-semibold" }))))));
 };
 export default ModalEditDeck;

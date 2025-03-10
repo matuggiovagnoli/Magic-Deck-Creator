@@ -9,7 +9,7 @@ const DeckSelection: React.FC<DeckSelectionProps> = ({decks, selectedDeck, setSe
             <label>Selecciona un Mazo: </label>
             <select
                 value={selectedDeck}
-                className='border-b focus:outline-none ml-2'
+                className='border-b focus:outline-none  w-40 truncate ml-2'
                 onChange={(e) => setSelectedDeck(e.target.value)}
             >
                 {
@@ -17,6 +17,7 @@ const DeckSelection: React.FC<DeckSelectionProps> = ({decks, selectedDeck, setSe
                     <option
                         key={deck.id}
                         value={deck.id}
+                        className='w-40 truncate'
                     >
                         {deck.name}
                     </option>)

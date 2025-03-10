@@ -11,12 +11,13 @@ const ModalEditDeck: React.FC<ModalPropsEditDeck> = ({ isOpen, closeModal, deck 
     
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        if (newTitle.trim() === "" || newTitle.length <= 3){
+        if (newTitle.trim().length <= 3 || newTitle.trim().length >= 15){
             setErrors(true)
             setNewTitle("")
         }else {
+            const title = newTitle.trim()
             setErrors(false)
-            updateDeckName(deck.id, newTitle);
+            updateDeckName(deck.id, title);
            closeModal("EditDeck");
         }
     }
@@ -35,7 +36,7 @@ const ModalEditDeck: React.FC<ModalPropsEditDeck> = ({ isOpen, closeModal, deck 
                                 className='focus:outline-none border-b'
                             />
                         </div>
-                        {error && <p  className='text-red-600'>El nuevo titulo no puedo estar vacio y debe contener al menos 3 caracteres</p>}
+                        {error && <p  className='text-red-600'>El nuevo titulo no puedo estar vacio y debe contener al menos 4 caracteres y menos de 15</p>}
                         <Button 
                             content="Confirmar"
                             type="Submit"

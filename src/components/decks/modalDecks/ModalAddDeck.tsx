@@ -7,17 +7,16 @@ const ModalAddDeck: React.FC<ModalPropsAddDeck> = ({ isOpen, closeModal, addDeck
     const [error, setError] = useState(false);
 
     const handleAddDeck = () => {
-        if (deckName.length > 3 && deckName.trim() !== "") {
-          setError(false);
-          if (deckName.trim()) {
-            addDeck(deckName);
-            setDeckName('');
-            closeModal('addDeck');
-          }
-        } else {
-          setError(true);
-        }
-      };
+      if (deckName.trim().length > 3 && deckName.trim().length <= 15) {  
+        setError(false);
+        addDeck(deckName);
+        setDeckName('');
+        closeModal('addDeck');
+      } else {
+        setError(true);
+      }
+  };
+  
 
   return (
     <>
@@ -38,7 +37,7 @@ const ModalAddDeck: React.FC<ModalPropsAddDeck> = ({ isOpen, closeModal, addDeck
                   placeholder="Nuevo nombre de deck"
                   className="px-4 py-2 border border-gray-300 rounded"
                 />
-              {error && <p className='text-red-600'>Debe contener por los menos 4 caracteres.</p>}
+              {error && <p className='text-red-600'>Debe contener por los menos 4 caracteres y menos de 15.</p>}
               </div>
               <button
                 onClick={handleAddDeck}

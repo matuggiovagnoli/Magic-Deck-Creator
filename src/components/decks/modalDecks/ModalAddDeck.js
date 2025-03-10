@@ -4,13 +4,11 @@ const ModalAddDeck = ({ isOpen, closeModal, addDeck }) => {
     const [deckName, setDeckName] = useState('');
     const [error, setError] = useState(false);
     const handleAddDeck = () => {
-        if (deckName.length > 3 && deckName.trim() !== "") {
+        if (deckName.trim().length > 3 && deckName.trim().length <= 15) {
             setError(false);
-            if (deckName.trim()) {
-                addDeck(deckName);
-                setDeckName('');
-                closeModal('addDeck');
-            }
+            addDeck(deckName);
+            setDeckName('');
+            closeModal('addDeck');
         }
         else {
             setError(true);
@@ -24,7 +22,7 @@ const ModalAddDeck = ({ isOpen, closeModal, addDeck }) => {
                             handleAddDeck();
                         }
                     }, placeholder: "Nuevo nombre de deck", className: "px-4 py-2 border border-gray-300 rounded" }),
-                error && React.createElement("p", { className: 'text-red-600' }, "Debe contener por los menos 4 caracteres.")),
+                error && React.createElement("p", { className: 'text-red-600' }, "Debe contener por los menos 4 caracteres y menos de 15.")),
             React.createElement("button", { onClick: handleAddDeck, className: "ml-2 px-4 py-2 bg-blue-600 text-white rounded" }, "Crear Deck"))))));
 };
 export default ModalAddDeck;

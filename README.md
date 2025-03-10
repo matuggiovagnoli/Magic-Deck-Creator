@@ -2,6 +2,8 @@
 
 By following the indications of the excercice I create "Magic Deck Creator". This web cosumes the API from magicthegathering.io
 
+This web APP is Runninng with Github-Pages. You can acces to this url: https://matuggiovagnoli.github.io/Magic-Deck-Creator/
+
 ## What is "Magic Deck Creator"?
 
 "Magic Deck Creator" is a web application where users can:
