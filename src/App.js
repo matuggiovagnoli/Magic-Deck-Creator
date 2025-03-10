@@ -14,9 +14,9 @@ function App() {
         React.createElement(Header, null),
         React.createElement("main", { className: 'flex-grow mt-[60px] mb-[50px]' },
             React.createElement(Routes, null,
-                React.createElement(Route, { path: 'Magic-Deck-Creator/', element: React.createElement(Home, null) }),
-                React.createElement(Route, { path: 'Magic-Deck-Creator/MagicCards', element: React.createElement(CardList, null) }),
-                React.createElement(Route, { path: 'Magic-Deck-Creator/Decks', element: React.createElement(MyDecks, null) }))),
+                React.createElement(Route, { path: '/', element: React.createElement(Home, null) }),
+                React.createElement(Route, { path: '/MagicCards', element: React.createElement(CardList, null) }),
+                React.createElement(Route, { path: '/Decks', element: React.createElement(MyDecks, null) }))),
         React.createElement(Footer, null)));
 }
 export default App;

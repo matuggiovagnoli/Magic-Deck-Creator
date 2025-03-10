@@ -5,5 +5,5 @@ import './index.css';
 import App from "./App";
 import { BrowserRouter } from 'react-router';
 createRoot(document.getElementById('root')).render(React.createElement(StrictMode, null,
-    React.createElement(BrowserRouter, null,
+    React.createElement(BrowserRouter, { basename: "/Magic-Deck-Creator" },
         React.createElement(App, null))));
